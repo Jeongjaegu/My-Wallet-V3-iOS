@@ -184,8 +184,9 @@ protocol KYCCoordinatorDelegate: class {
     }
 
     private func pageTypeForUser() -> KYCPageType {
-        guard let currentUser = user else { return .welcome }
-        guard currentUser.personalDetails != nil else { return .welcome }
+        guard let currentUser = user, currentUser.personalDetails != nil else {
+            return .welcome
+        }
 
         if currentUser.address != nil {
             if let mobile = currentUser.mobile {
