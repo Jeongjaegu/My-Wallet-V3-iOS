@@ -188,18 +188,10 @@ protocol KYCCoordinatorDelegate: class {
             return .welcome
         }
 
-        if currentUser.address != nil {
-            if let mobile = currentUser.mobile {
-                switch mobile.verified {
-                case true:
-                    return .verifyIdentity
-                case false:
-                    return .enterPhone
-                }
-            }
+        guard currentUser.address != nil, let mobile = currentUser.mobile else {
             return .address
         }
 
-        return .address
+        return mobile.verified ? .verifyIdentity : .enterPhone
     }
 }
