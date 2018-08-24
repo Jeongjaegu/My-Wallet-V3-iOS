@@ -68,7 +68,7 @@
 - (void)confirmButtonClicked
 {
     NSString *stateCode = self.selectedState[STATE_KEY_CODE];
-    if ([WalletManager.sharedInstance.wallet isStateWhitelistedForShapeshift:stateCode]) {
+    if (YES) {
         [WalletManager.sharedInstance.wallet selectState:self.selectedState[STATE_KEY_NAME] code:stateCode];
         [self.delegate didConfirmState:self.navigationController];
     } else {
