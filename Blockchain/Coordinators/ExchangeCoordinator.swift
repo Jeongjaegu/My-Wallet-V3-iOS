@@ -56,9 +56,9 @@ struct ExchangeServices: ExchangeDependencies {
         if WalletManager.shared.wallet.hasEthAccount() {
             let success = { [weak self] (isHomebrewAvailable: Bool) in
                 if isHomebrewAvailable {
-                    self?.showExchange(type: .homebrew)
+                    self?.showCreateExchange(type: .homebrew)
                 } else {
-                    self?.showExchange(type: .shapeshift)
+                    self?.showCreateExchange(type: .homebrew)
                 }
             }
             let error = { (error: Error) in
@@ -122,13 +122,22 @@ struct ExchangeServices: ExchangeDependencies {
         }
     }
 
-    private func showCreateExchangetype(type: ExchangeType) {
+    private func showCreateExchange(type: ExchangeType) {
         switch type {
         case .homebrew:
             let exchangeCreateViewController = ExchangeCreateViewController()
             exchangeCreateViewController.delegate = self
             self.createInterface = exchangeCreateViewController
-            // present view controller
+            guard let viewController = rootViewController else {
+                Logger.shared.error("View controller to present on is nil")
+                return
+            }
+            exchangeViewController = PartnerExchangeListViewController()
+            let navigationController = BCNavigationController(
+                rootViewController: exchangeCreateViewController,
+                title: LocalizationConstants.Exchange.navigationTitle
+            )
+            viewController.present(navigationController, animated: true, completion: { LoadingViewPresenter.shared.hideBusyView() })
         default:
             // show shapeshift
             Logger.shared.debug("Not yet implemented")
@@ -176,6 +185,11 @@ struct ExchangeServices: ExchangeDependencies {
 
 // MARK: - Exchange Creation
 extension ExchangeCoordinator: ExchangeCreateDelegate {
+    func onViewDidLoad() {
+        subscribeToRates()
+        marketsService.pair = TradingPair(from: .bitcoin, to: .ethereum)
+    }
+
     func onChangeFrom(assetType: AssetType) {
         marketsService.pair?.from = assetType
     }

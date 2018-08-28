@@ -9,6 +9,7 @@
 import Foundation
 
 protocol ExchangeCreateDelegate: class {
+    func onViewDidLoad()
     func onContinueButtonTapped()
     func onChangeAmountFieldText()
     func onChangeFrom(assetType: AssetType)
