@@ -11,14 +11,11 @@ import Foundation
 @objc
 extension NetworkManager {
     static var userAgent: String? {
-        let systemVersion = UIDevice.current.systemVersion
-        let deviceName = UIDevice.current.modelName
-        guard
-            let version = Bundle.applicationVersion,
-            let build = Bundle.applicationBuildVersion else {
+        let webView = UIWebView(frame: .zero)
+        guard let userAgent = webView.stringByEvaluatingJavaScript(from: "navigator.userAgent"),
+            let version = Bundle.applicationVersion else {
                 return nil
         }
-        let versionAndBuild = String(format: "%@ b%@", version, build)
-        return String(format: "Blockchain-iOS/%@ (iOS/%@; %@)", versionAndBuild, systemVersion, deviceName)
+        return userAgent + " Blockchain/" + version
     }
 }
