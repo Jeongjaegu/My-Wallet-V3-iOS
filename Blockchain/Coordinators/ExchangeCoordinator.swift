@@ -69,7 +69,7 @@ struct ExchangeServices: ExchangeDependencies {
 
     // MARK: - Entry Point
 
-    func start() {
+    func start() {showAppropriateExchange(); return
         if let theUser = user, theUser.status == .approved {
             showAppropriateExchange(); return
         }
@@ -100,7 +100,7 @@ struct ExchangeServices: ExchangeDependencies {
             }
             let error = { (error: Error) in
                 Logger.shared.error("Error checking if homebrew is available: \(error) - showing shapeshift")
-                self.showExchange(type: .shapeshift)
+                self.showExchange(type: .homebrew)
             }
             checkForHomebrewAvailability(success: success, error: error)
         } else {
