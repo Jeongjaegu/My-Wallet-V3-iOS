@@ -66,7 +66,6 @@ class ExchangeCreateViewController: UIViewController {
         
 
         primaryAmountLabel.textColor = UIColor.brandPrimary
-        primaryDecimalLabel.textColor = UIColor.brandPrimary
         secondaryAmountLabel.textColor = UIColor.brandPrimary
         
         useMaximumButton.layer.cornerRadius = 4.0
@@ -83,7 +82,6 @@ class ExchangeCreateViewController: UIViewController {
         exchangeRateView.layer.borderColor = UIColor.brandPrimary.cgColor
 
         primaryAmountLabel.font = UIFont(name: Constants.FontNames.montserratRegular, size: Constants.FontSizes.Huge)
-        primaryDecimalLabel.font = UIFont(name: Constants.FontNames.montserratRegular, size: Constants.FontSizes.Small)
         secondaryAmountLabel.font = UIFont(name: Constants.FontNames.montserratRegular, size: Constants.FontSizes.MediumLarge)
         
         if let navController = navigationController as? BCNavigationController {
@@ -131,6 +129,11 @@ extension ExchangeCreateViewController: NumberKeypadViewDelegate {
 }
 
 extension ExchangeCreateViewController: ExchangeCreateInterface {
+    func updateAttributedPrimary(_ primary: NSAttributedString?, secondary: String?) {
+        primaryAmountLabel.attributedText = primary
+        secondaryAmountLabel.text = secondary
+    }
+    
     
     func ratesViewVisibility(_ visibility: Visibility) {
 
@@ -138,8 +141,8 @@ extension ExchangeCreateViewController: ExchangeCreateInterface {
 
     func updateInputLabels(primary: String?, primaryDecimal: String?, secondary: String?) {
         primaryAmountLabel.text = primary
-        primaryDecimalLabel.text = primaryDecimal
-        decimalLabelSpacingConstraint.constant = primaryDecimal == nil ? 0 : 2
+//        primaryDecimalLabel.text = primaryDecimal
+//        decimalLabelSpacingConstraint.constant = primaryDecimal == nil ? 0 : 2
         secondaryAmountLabel.text = secondary
     }
 
