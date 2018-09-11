@@ -40,6 +40,14 @@ extension ExchangeCreatePresenter: ExchangeCreateDelegate {
 }
 
 extension ExchangeCreatePresenter: ExchangeCreateOutput {
+    func primaryFont() -> UIFont {
+        return interface?.primaryFont() ?? UIFont.systemFont(ofSize: 17)
+    }
+    
+    func secondaryFont() -> UIFont {
+        return interface?.secondaryFont() ?? UIFont.systemFont(ofSize: 17)
+    }
+    
     func updatedInput(primary: NSAttributedString?, secondary: String?) {
         interface?.updateAttributedPrimary(primary, secondary: secondary)
     }
