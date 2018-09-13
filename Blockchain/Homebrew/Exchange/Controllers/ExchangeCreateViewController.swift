@@ -9,6 +9,13 @@
 import Foundation
 
 class ExchangeCreateViewController: UIViewController {
+    
+    // MARK: Private Static Properties
+    
+    static let primaryFontName: String = Constants.FontNames.montserratRegular
+    static let primaryFontSize: CGFloat = Constants.FontSizes.Huge
+    static let secondaryFontName: String = Constants.FontNames.montserratRegular
+    static let secondaryFontSize: CGFloat = Constants.FontSizes.SmallMedium
 
     // MARK: - IBOutlets
 
@@ -119,6 +126,10 @@ class ExchangeCreateViewController: UIViewController {
 }
 
 extension ExchangeCreateViewController: NumberKeypadViewDelegate {
+    func onDelimiterTapped(value: String) {
+        delegate?.onDelimiterTapped(value: value)
+    }
+    
     func onAddInputTapped(value: String) {
         delegate?.onAddInputTapped(value: value)
     }
@@ -129,6 +140,47 @@ extension ExchangeCreateViewController: NumberKeypadViewDelegate {
 }
 
 extension ExchangeCreateViewController: ExchangeCreateInterface {
+    
+    func wigglePrimaryPrimaryLabel() {
+        guard primaryAmountLabel.layer.animationKeys() == nil else { return }
+        let wiggle = CABasicAnimation(keyPath: "position")
+        wiggle.duration = 0.05
+        wiggle.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        wiggle.repeatCount = 1
+        wiggle.autoreverses = true
+        wiggle.fromValue = CGPoint(
+            x: primaryAmountLabel.center.x - 2.0,
+            y: primaryAmountLabel.center.y
+        )
+        wiggle.toValue = CGPoint(
+            x: primaryAmountLabel.center.x + 2.0,
+            y: primaryAmountLabel.center.y
+        )
+        primaryAmountLabel.layer.add(wiggle, forKey: wiggle.keyPath)
+        let feedback = UINotificationFeedbackGenerator()
+        feedback.notificationOccurred(.error)
+    }
+    
+    func styleTemplate() -> ExchangeStyleTemplate {
+        
+        let primary = UIFont(
+            name: ExchangeCreateViewController.primaryFontName,
+            size: ExchangeCreateViewController.primaryFontSize
+        ) ?? UIFont.systemFont(ofSize: 17.0)
+        
+        let secondary = UIFont(
+            name: ExchangeCreateViewController.secondaryFontName,
+            size: ExchangeCreateViewController.secondaryFontSize
+            ) ?? UIFont.systemFont(ofSize: 17.0)
+        
+        return ExchangeStyleTemplate(
+            primaryFont: primary,
+            secondaryFont: secondary,
+            textColor: .brandPrimary,
+            pendingColor: UIColor.brandPrimary.withAlphaComponent(0.5)
+        )
+    }
+    
     func primaryFont() -> UIFont {
         guard let font = UIFont(
             name: Constants.FontNames.montserratRegular,
