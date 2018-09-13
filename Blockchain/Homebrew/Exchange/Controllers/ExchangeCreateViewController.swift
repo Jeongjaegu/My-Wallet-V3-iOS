@@ -215,8 +215,6 @@ extension ExchangeCreateViewController: ExchangeCreateInterface {
 
     func updateInputLabels(primary: String?, primaryDecimal: String?, secondary: String?) {
         primaryAmountLabel.text = primary
-//        primaryDecimalLabel.text = primaryDecimal
-//        decimalLabelSpacingConstraint.constant = primaryDecimal == nil ? 0 : 2
         secondaryAmountLabel.text = secondary
     }
 
