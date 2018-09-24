@@ -606,6 +606,14 @@ struct LocalizationConstants {
             "Approved",
             comment: "KYC verification is approved."
         )
+        static let accountApprovedAlertTitle = NSLocalizedString(
+            "Your Identity Has Been Successfully Verified",
+            comment: "The title of the alert when the identity of the user has been confirmed."
+        )
+        static let accountApprovedAlertBody = NSLocalizedString(
+            "Congratulations! We successfully verified your identity. You can now exchange cryptocurrencies in your Blockchain wallet.",
+            comment: "The body of the alert when the identity of the user has been confirmed."
+        )
         static let accountPendingBadge = NSLocalizedString(
             "Pending",
             comment: "KYC verification is Pending."
