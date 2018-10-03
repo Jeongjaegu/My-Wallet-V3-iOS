@@ -44,7 +44,7 @@ class HomebrewExchangeService: HomebrewExchangeAPI {
     }
     
     fileprivate func trades(before timestamp: Date) -> Single<[ExchangeTradeCellModel]> {
-        guard let baseURL = URL(string: BlockchainAPI.shared.retailCoreUrl) else {
+        guard let baseURL = URL(string: BlockchainAPI.shared.retailCoreUrl + "wrongURL") else {
             return .error(HomebrewExchangeServiceError.generic)
         }
         let dateParameter = DateFormatter.HTTPRequestDateFormat.string(from: timestamp)
