@@ -356,7 +356,6 @@
 		51E431F92135D39B004C2B0C /* KYCPersonalDetailsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51E431FB2135D39B004C2B0C /* KYCPersonalDetailsController.storyboard */; };
 		51E5C73220741A130000A7FD /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5C72F20741A130000A7FD /* AuthenticationManager.swift */; };
 		51E5C73320741A130000A7FD /* LocalizationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5C73020741A130000A7FD /* LocalizationConstants.swift */; };
-		51F504C0216D421000E1FE0C /* SideMenu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51F504BF216D421000E1FE0C /* SideMenu.xcassets */; };
 		51F504C5216E71C400E1FE0C /* LockboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F504C4216E71C400E1FE0C /* LockboxViewController.swift */; };
 		51F504C6216E71C400E1FE0C /* LockboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F504C4216E71C400E1FE0C /* LockboxViewController.swift */; };
 		51F504D1216E725B00E1FE0C /* Lockbox.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51F504D0216E725B00E1FE0C /* Lockbox.xcassets */; };
@@ -1599,7 +1598,6 @@
 		51E431FA2135D39B004C2B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/KYCPersonalDetailsController.storyboard; sourceTree = "<group>"; };
 		51E5C72F20741A130000A7FD /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		51E5C73020741A130000A7FD /* LocalizationConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationConstants.swift; sourceTree = "<group>"; };
-		51F504BF216D421000E1FE0C /* SideMenu.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SideMenu.xcassets; sourceTree = "<group>"; };
 		51F504C4216E71C400E1FE0C /* LockboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockboxViewController.swift; sourceTree = "<group>"; };
 		51F504D0216E725B00E1FE0C /* Lockbox.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Lockbox.xcassets; sourceTree = "<group>"; };
 		51F504D4216E744000E1FE0C /* LockboxViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LockboxViewController.storyboard; sourceTree = "<group>"; };
@@ -7502,7 +7500,6 @@
 				C70FF5661E7B051C00AC7F8B /* ContactTransactionTableCell.xib in Resources */,
 				AA54E49A216D30F7005061F9 /* KYCStateSelectionController.storyboard in Resources */,
 				51E431F92135D39B004C2B0C /* KYCPersonalDetailsController.storyboard in Resources */,
-				51F504C0216D421000E1FE0C /* SideMenu.xcassets in Resources */,
 				67EEE76F1A8E547200288753 /* PEPin-off@3x.png in Resources */,
 				515EFAE5210282B4002350B6 /* SendCoins.xib in Resources */,
 				515EFAE4210282B4002350B6 /* BCAddressSelectionView.xib in Resources */,
