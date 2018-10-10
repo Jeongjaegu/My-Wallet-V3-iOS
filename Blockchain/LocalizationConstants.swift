@@ -313,6 +313,10 @@ struct LocalizationConstants {
         static let logout = NSLocalizedString("Logout", comment: "")
         static let debug = NSLocalizedString("Debug", comment: "")
         static let logoutConfirm = NSLocalizedString("Do you really want to log out?", comment: "")
+        static let newItemBadgeTitle = NSLocalizedString(
+            "New",
+            comment: "The title of the badge for a given side menu item."
+        )
         static let buySellBitcoin = NSLocalizedString(
             "Buy & Sell Bitcoin",
             comment: "Item displayed on the side menu of the app for when the user wants to buy and sell Bitcoin."
@@ -336,6 +340,10 @@ struct LocalizationConstants {
         static let support = NSLocalizedString(
             "Support",
             comment: "Item displayed on the side menu of the app for when the user wants to contact support."
+        )
+        static let lockbox = NSLocalizedString(
+            "Lockbox",
+            comment: "Item displayed on the side menu of the app for when the user wants to engage with their lockbox."
         )
     }
 

@@ -44,6 +44,8 @@ extension SideMenuItem {
         case .backup: return #imageLiteral(resourceName: "lock")
         case .buyBitcoin: return #imageLiteral(resourceName: "buy")
         case .exchange: return #imageLiteral(resourceName: "exchange_menu")
+        // TODO: replace with imported asset (from new image catalog in SideMenu group)
+        case .lockbox: return UIImage()
         case .logout: return #imageLiteral(resourceName: "logout")
         case .settings: return #imageLiteral(resourceName: "settings")
         case .support: return #imageLiteral(resourceName: "help")

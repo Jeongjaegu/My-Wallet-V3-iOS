@@ -354,6 +354,7 @@
 		51E431F92135D39B004C2B0C /* KYCPersonalDetailsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51E431FB2135D39B004C2B0C /* KYCPersonalDetailsController.storyboard */; };
 		51E5C73220741A130000A7FD /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5C72F20741A130000A7FD /* AuthenticationManager.swift */; };
 		51E5C73320741A130000A7FD /* LocalizationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E5C73020741A130000A7FD /* LocalizationConstants.swift */; };
+		51F504C0216D421000E1FE0C /* SideMenu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51F504BF216D421000E1FE0C /* SideMenu.xcassets */; };
 		51F5D04321542B96003D6237 /* KYCConfirmPhoneNumberController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F5D04521542B96003D6237 /* KYCConfirmPhoneNumberController.storyboard */; };
 		51F5D09821542CEF003D6237 /* KYCCountrySelectionController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F5D09A21542CEF003D6237 /* KYCCountrySelectionController.storyboard */; };
 		51F5D0ED21542D82003D6237 /* KYCEnterPhoneNumberController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F5D0EF21542D82003D6237 /* KYCEnterPhoneNumberController.storyboard */; };
@@ -1572,6 +1573,7 @@
 		51E431FA2135D39B004C2B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/KYCPersonalDetailsController.storyboard; sourceTree = "<group>"; };
 		51E5C72F20741A130000A7FD /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		51E5C73020741A130000A7FD /* LocalizationConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationConstants.swift; sourceTree = "<group>"; };
+		51F504BF216D421000E1FE0C /* SideMenu.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SideMenu.xcassets; sourceTree = "<group>"; };
 		51F5CFA0215429A3003D6237 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/KYCAddressController.strings; sourceTree = "<group>"; };
 		51F5CFA2215429A7003D6237 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/KYCAddressController.strings; sourceTree = "<group>"; };
 		51F5CFA4215429B3003D6237 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/KYCAddressController.strings; sourceTree = "<group>"; };
@@ -6250,7 +6252,7 @@
 				AACE31FA2093F9F200B7B806 /* Reminder */,
 				C9D4B2AF193E023C00EDA9EA /* Resources */,
 				AA69F65C2086A7330054EFCE /* Settings */,
-				AA31A7B82098DFB900FE6268 /* Side Menu */,
+				AA31A7B82098DFB900FE6268 /* SideMenu */,
 				AA54277820D88D1D00D5FEEE /* Swipe to Receive */,
 				AA63F84E20A12D88002B719B /* URL */,
 				9FCA4D18151494A300ECDFBE /* View Controllers */,
@@ -6468,7 +6470,7 @@
 			path = Javascript;
 			sourceTree = "<group>";
 		};
-		AA31A7B82098DFB900FE6268 /* Side Menu */ = {
+		AA31A7B82098DFB900FE6268 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
 				AA447BC52127677300EC0FA0 /* SideMenuViewController.storyboard */,
@@ -6476,8 +6478,9 @@
 				AA31A7BA2098DFCF00FE6268 /* SideMenuItem.swift */,
 				AA447BC921276DA900EC0FA0 /* SideMenuPresenter.swift */,
 				AA447BC72127679A00EC0FA0 /* SideMenuViewController.swift */,
+				51F504BF216D421000E1FE0C /* SideMenu.xcassets */,
 			);
-			path = "Side Menu";
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		AA31ABC92141CEDA003AC42F /* Models */ = {
@@ -7360,6 +7363,7 @@
 				23321D7A1BB0730C0005624F /* my-wallet.js in Resources */,
 				C70FF5661E7B051C00AC7F8B /* ContactTransactionTableCell.xib in Resources */,
 				51E431F92135D39B004C2B0C /* KYCPersonalDetailsController.storyboard in Resources */,
+				51F504C0216D421000E1FE0C /* SideMenu.xcassets in Resources */,
 				67EEE76F1A8E547200288753 /* PEPin-off@3x.png in Resources */,
 				515EFAE5210282B4002350B6 /* SendCoins.xib in Resources */,
 				515EFAE4210282B4002350B6 /* BCAddressSelectionView.xib in Resources */,
