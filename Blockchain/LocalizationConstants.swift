@@ -102,7 +102,7 @@ struct LocalizationConstants {
             """
             A connection cannot be established because the server certificate could not be validated. Please check your network settings and ensure that you are using a secure connection.
             """, comment: "Message shown when the app has detected a possible man-in-the-middle attack.")
-        static let notEnoughFunds = NSLocalizedString("You don't have enough funds in this address to send that.", comment: "Message shown when the user has attempted to send more funds than the user has")
+        static let notEnoughXForFees = NSLocalizedString("Not enough %@ for fees", comment: "Message shown when the user has attempted to send more funds than the user can spend (input amount plus fees)")
     }
 
     struct Authentication {
@@ -341,9 +341,13 @@ struct LocalizationConstants {
             "Support",
             comment: "Item displayed on the side menu of the app for when the user wants to contact support."
         )
+        static let new = NSLocalizedString(
+            "New",
+            comment: "New tag shown for menu items that are new."
+        )
         static let lockbox = NSLocalizedString(
             "Lockbox",
-            comment: "Item displayed on the side menu of the app for when the user wants to engage with their lockbox."
+            comment: "Lockbox menu item title."
         )
     }
 
@@ -383,12 +387,12 @@ struct LocalizationConstants {
             "Refunded",
             comment: "Text shown on the exchange list cell indicating the trade status"
         )
-        
+
         static let orderHistory = NSLocalizedString(
             "Order History",
             comment: "Header for the exchange list"
         )
-        
+
         static let loading = NSLocalizedString(
             "Loading Exchange",
             comment: "Text presented when the wallet is loading the exchange"
@@ -452,7 +456,7 @@ struct LocalizationConstants {
             "What do you want to receive?",
             comment: "Text displayed on the action sheet that is presented when the user is selecting an account to exchange into."
         )
-        
+
         static let fees = NSLocalizedString("Fees", comment: "Fees")
         static let confirmExchange = NSLocalizedString(
             "Confirm Exchange",
@@ -486,7 +490,7 @@ struct LocalizationConstants {
             "Insufficient funds",
             comment: "Error message shown when a user is attempting to exchange an amount greater than their balance"
         )
-        
+
         static let yourMin = NSLocalizedString(
             "Your Min is",
             comment: "Error that displays what the minimum amount of fiat is required for a trade"
@@ -890,8 +894,8 @@ struct LocalizationConstants {
     @objc class func continueKYCCardDescription() -> String { return LocalizationConstants.AnnouncementCards.continueKYCCardDescription }
 
     @objc class func continueKYCActionButtonTitle() -> String { return LocalizationConstants.AnnouncementCards.continueKYCActionButtonTitle }
-    
-    @objc class func notEnoughFunds() -> String { return LocalizationConstants.Errors.notEnoughFunds }
+
+    @objc class func notEnoughXForFees() -> String { return LocalizationConstants.Errors.notEnoughXForFees }
 
     @objc class func balances() -> String { return LocalizationConstants.balances }
 

@@ -14,12 +14,12 @@ enum SideMenuItem: String, RawValued {
     case backup = "backup"
     case buyBitcoin = "buy_bitcoin"
     case exchange = "exchange"
-    case lockbox
     case logout = "logout"
     case settings = "settings"
     case support = "support"
     case upgrade = "upgrade"
     case webLogin = "web_login"
+    case lockbox = "lockbox"
 }
 
 extension SideMenuItem {
@@ -29,28 +29,44 @@ extension SideMenuItem {
         case .backup: return LocalizationConstants.SideMenu.backupFunds
         case .buyBitcoin: return LocalizationConstants.SideMenu.buySellBitcoin
         case .exchange: return LocalizationConstants.SideMenu.exchange
-        case .lockbox: return LocalizationConstants.SideMenu.lockbox
         case .logout: return LocalizationConstants.SideMenu.logout
         case .settings: return LocalizationConstants.SideMenu.settings
         case .support: return LocalizationConstants.SideMenu.support
         case .upgrade: return LocalizationConstants.LegacyUpgrade.upgrade
         case .webLogin: return LocalizationConstants.SideMenu.loginToWebWallet
+        case .lockbox: return LocalizationConstants.SideMenu.lockbox
         }
     }
 
     var image: UIImage {
         switch self {
-        case .accountsAndAddresses: return #imageLiteral(resourceName: "wallet")
-        case .backup: return #imageLiteral(resourceName: "lock")
-        case .buyBitcoin: return #imageLiteral(resourceName: "buy")
-        case .exchange: return #imageLiteral(resourceName: "exchange_menu")
-        // TODO: replace with imported asset (from new image catalog in SideMenu group)
-        case .lockbox: return UIImage()
-        case .logout: return #imageLiteral(resourceName: "logout")
-        case .settings: return #imageLiteral(resourceName: "settings")
-        case .support: return #imageLiteral(resourceName: "help")
+        case .accountsAndAddresses: return #imageLiteral(resourceName: "Icon-Address")
+        case .backup: return #imageLiteral(resourceName: "Icon-Backup")
+        case .buyBitcoin: return #imageLiteral(resourceName: "Icon-Buy")
+        case .exchange: return #imageLiteral(resourceName: "Icon-Exchange-1")
+        case .logout: return #imageLiteral(resourceName: "Icon-Logout")
+        case .settings: return #imageLiteral(resourceName: "Icon-Settings")
+        case .support: return #imageLiteral(resourceName: "Icon-Question")
         case .upgrade: return #imageLiteral(resourceName: "icon_upgrade")
-        case .webLogin: return #imageLiteral(resourceName: "web")
+        case .webLogin: return #imageLiteral(resourceName: "Icon-Web")
+        case .lockbox: return #imageLiteral(resourceName: "Icon-Lockbox")
+        }
+    }
+
+    var isNew: Bool {
+        switch self {
+        case .lockbox:
+            return true
+        case .accountsAndAddresses,
+             .backup,
+             .buyBitcoin,
+             .exchange,
+             .logout,
+             .settings,
+             .support,
+             .upgrade,
+             .webLogin:
+            return false
         }
     }
 }
