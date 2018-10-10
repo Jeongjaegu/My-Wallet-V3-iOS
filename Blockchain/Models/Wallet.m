@@ -2603,6 +2603,17 @@
     return NO;
 }
 
+# pragma mark - Lockbox
+
+- (NSArray *_Nonnull)getLockboxDevices
+{
+    if (!self.isInitialized) {
+        return [[NSArray alloc] init];
+    }
+    JSValue *devicesJsValue = [self.context evaluateScript:@"MyWalletPhone.lockbox.devices()"];
+    return [devicesJsValue toArray];
+}
+
 # pragma mark - Retail Core
 
 - (void)updateKYCUserCredentialsWithUserId:(NSString *)userId lifetimeToken:(NSString *)lifetimeToken success:(void (^)(NSString *))success error: (void (^)(NSString *))error
@@ -2619,7 +2630,8 @@
     if ([self isInitialized]) {
         JSValue *userId = [self.context evaluateScript:@"MyWalletPhone.KYC.userId()"];
         if ([userId isNull] || [userId isUndefined]) return nil;
-        return [userId toString];
+        NSString *userIdString = [userId toString];
+        return userIdString.length > 0 ? userIdString : nil;
     }
     return nil;
 }
@@ -2629,7 +2641,8 @@
     if ([self isInitialized]) {
         JSValue *lifetimeToken = [self.context evaluateScript:@"MyWalletPhone.KYC.lifetimeToken()"];
         if ([lifetimeToken isNull] || [lifetimeToken isUndefined]) return nil;
-        return [lifetimeToken toString];
+        NSString *tokenString = [lifetimeToken toString];
+        return tokenString.length > 0 ? tokenString : nil;
     }
     return nil;
 }
