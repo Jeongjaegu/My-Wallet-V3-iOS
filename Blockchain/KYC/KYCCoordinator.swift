@@ -84,8 +84,7 @@ protocol KYCCoordinatorDelegate: class {
                 if self.pageTypeForUser() == .accountStatus {
                     self.presentAccountStatusView(for: $0.status, in: viewController)
                 } else {
-                    self.initializeNavigationStack(viewController)
-                    self.restoreToMostRecentPageIfNeeded()
+self.presentAccountStatusView(for: .failed, in: viewController)
                 }
             }, onError: { error in
                 Logger.shared.error("Failed to get user: \(error.localizedDescription)")
